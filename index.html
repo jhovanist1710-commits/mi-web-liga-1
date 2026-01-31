@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>LIGA 1 MAX RETRO</title>
+    <style>
+        body { margin: 0; background: #0b0b0b; color: white; font-family: sans-serif; overflow: hidden; }
+        .navbar { background: #002a54; padding: 10px; border-bottom: 3px solid #e21e26; text-align: center; }
+        .contenedor { display: flex; height: calc(100vh - 50px); }
+        .area-video { flex: 3; background: #000; }
+        .area-chat { flex: 1; background: #151515; border-left: 1px solid #333; display: flex; flex-direction: column; }
+        .chat-frame { flex-grow: 1; width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <div class="navbar"><strong>LIGA 1 <span style="color: #e21e26;">MAX</span> RETRO</strong></div>
+    <div class="contenedor">
+        <div class="area-video">
+            <div id="twitch-embed" style="width: 100%; height: 100%;"></div>
+            <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+            <script>
+                new Twitch.Player("twitch-embed", {
+                    channel: "GIOTN1924",
+                    width: "100%", height: "100%",
+                    parent: ["localhost", "127.0.0.1", "mi-web-liga-1.vercel.app"]
+                });
+            </script>
+        </div>
+        <div class="area-chat">
+            <iframe src="https://www3.cbox.ws/box/?boxid=3551949&boxtag=A7QmtS" class="chat-frame" allowtransparency="yes" frameborder="0"></iframe>
+        </div>
+    </div>
+</body>
+</html>
