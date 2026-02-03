@@ -5,95 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LIGA 1 PERU MAX</title>
     <style>
-        /* Fondo general */
-        body { margin: 0; background: #1a1a1b; color: white; font-family: 'Arial Black', sans-serif; overflow-x: hidden; }
-        
-        /* Cabecera Estilizada (Basada en tu imagen) */
+        body { margin: 0; background: #0b0b0b; color: white; font-family: 'Arial Black', sans-serif; overflow-x: hidden; }
         .header-container {
-            background: #001a33; /* Azul oscuro */
+            background: #001a33;
             background-image: linear-gradient(135deg, rgba(226,30,38,0.2) 25%, transparent 25%, transparent 50%, rgba(226,30,38,0.2) 50%, rgba(226,30,38,0.2) 75%, transparent 75%, transparent 100%);
-            background-size: 40px 40px; /* Crea el efecto de líneas diagonales rojas */
-            height: 120px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-bottom: 5px solid #e21e26;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            background-size: 40px 40px;
+            height: 100px; display: flex; align-items: center; justify-content: center; border-bottom: 5px solid #e21e26;
         }
-
-        .logo-box {
-            display: flex;
-            align-items: center;
-            background: rgba(0,0,0,0.4);
-            padding: 10px 30px;
-            border-radius: 50px;
-            border: 2px solid #e21e26;
-        }
-
-        .logo-circular {
-            width: 60px;
-            height: 60px;
-            background: #f2f2f2;
-            border-radius: 50%;
-            margin-right: 15px;
-            border: 3px solid #e21e26;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #002a54;
-            font-size: 20px;
-            box-shadow: 0 0 10px #e21e26;
-        }
-
-        .titulo { font-size: 28px; letter-spacing: -1px; }
-        .rojo { color: #e21e26; }
-
-        /* Estructura de Video y Chat */
-        .contenedor { display: flex; height: calc(100vh - 125px); background: #000; }
-        .area-video { flex: 3; position: relative; }
+        .logo-box { display: flex; align-items: center; background: rgba(0,0,0,0.5); padding: 8px 25px; border-radius: 50px; border: 2px solid #e21e26; }
+        .logo-circular { width: 50px; height: 50px; background: #fff; border-radius: 50%; margin-right: 15px; border: 3px solid #e21e26; display: flex; align-items: center; justify-content: center; color: #002a54; font-size: 18px; }
+        .titulo { font-size: 22px; } .rojo { color: #e21e26; }
+        .contenedor { display: flex; height: calc(100vh - 105px); }
+        .area-video { flex: 3; background: #000; }
         .area-chat { flex: 1; background: #151515; border-left: 1px solid #333; }
         .chat-frame { width: 100%; height: 100%; border: none; }
-
-        /* Adaptación para Celular */
         @media (max-width: 768px) {
-            .header-container { height: 80px; }
-            .logo-circular { width: 40px; height: 40px; font-size: 14px; }
-            .titulo { font-size: 18px; }
             .contenedor { flex-direction: column; height: auto; }
-            .area-video { width: 100%; aspect-ratio: 16 / 9; }
-            .area-chat { width: 100%; height: 400px; }
+            .area-video { width: 100%; aspect-ratio: 16 / 9; flex: none; }
+            .area-chat { width: 100%; height: 500px; }
         }
     </style>
 </head>
 <body>
-
     <div class="header-container">
         <div class="logo-box">
             <div class="logo-circular">L1M</div>
             <div class="titulo">LIGA 1 <span class="rojo">PERU MAX</span></div>
         </div>
     </div>
-
     <div class="contenedor">
-        <div class="area-video">
-            <div id="twitch-embed" style="width: 100%; height: 100%;"></div>
-        </div>
+        <div class="area-video"><div id="twitch-embed" style="width: 100%; height: 100%;"></div></div>
         <div class="area-chat">
-            <iframe src="https://www3.cbox.ws/box/?boxid=3551949&boxtag=A7QmtS" class="chat-frame" allowtransparency="yes" frameborder="0"></iframe>
+            <iframe src="https://www3.cbox.ws/box/?boxid=3551949&boxtag=A7QmtS&nm=Usuario_L1" class="chat-frame" allowtransparency="yes" frameborder="0"></iframe>
         </div>
     </div>
-
     <script src="https://player.twitch.tv/js/embed/v1.js"></script>
     <script>
         new Twitch.Player("twitch-embed", {
-            channel: "GIOTN1924",
-            width: "100%",
-            height: "100%",
-            parent: [
-                "mi-web-liga-1-urqo.vercel.app",
-                "mi-web-liga-1.vercel.app"
-            ]
+            channel: "GIOTN1924", width: "100%", height: "100%",
+            parent: ["mi-web-liga-1-urqo.vercel.app", "mi-web-liga-1.vercel.app"]
         });
     </script>
 </body>
 </html>
+
