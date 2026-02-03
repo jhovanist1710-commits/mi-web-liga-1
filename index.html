@@ -2,33 +2,39 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>LIGA 1 MAX RETRO</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIGA 1 PERU MAX</title>
     <style>
-        body { margin: 0; background: #0b0b0b; color: white; font-family: sans-serif; overflow: hidden; }
-        .navbar { background: #002a54; padding: 10px; border-bottom: 3px solid #e21e26; text-align: center; }
-        .contenedor { display: flex; height: calc(100vh - 50px); }
+        /* Fondo oscuro sin distracciones */
+        body { margin: 0; background: #0b0b0b; color: white; font-family: 'Arial', sans-serif; overflow-x: hidden; }
+        
+        /* Barra superior solo con el nombre */
+        .navbar { 
+            background: #002a54; 
+            padding: 15px; 
+            border-bottom: 3px solid #e21e26; 
+            text-align: center; 
+            position: sticky; 
+            top: 0; 
+            z-index: 100;
+        }
+        .logo-texto { font-size: 22px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; }
+        .resaltado { color: #e21e26; }
+
+        /* Contenedor de Video y Chat */
+        .contenedor { display: flex; flex-direction: row; height: calc(100vh - 60px); }
         .area-video { flex: 3; background: #000; }
-        .area-chat { flex: 1; background: #151515; border-left: 1px solid #333; display: flex; flex-direction: column; }
-        .chat-frame { flex-grow: 1; width: 100%; height: 100%; border: none; }
+        .area-chat { flex: 1; background: #151515; border-left: 1px solid #333; }
+        .chat-frame { width: 100%; height: 100%; border: none; }
+
+        /* Ajustes para Celulares */
+        @media (max-width: 768px) {
+            .contenedor { flex-direction: column; height: auto; }
+            .area-video { width: 100%; aspect-ratio: 16 / 9; }
+            .area-chat { width: 100%; height: 500px; border-left: none; border-top: 1px solid #333; }
+        }
     </style>
 </head>
 <body>
-    <div class="navbar"><strong>LIGA 1 <span style="color: #e21e26;">MAX</span> RETRO</strong></div>
-    <div class="contenedor">
-        <div class="area-video">
-            <div id="twitch-embed" style="width: 100%; height: 100%;"></div>
-            <script src="https://player.twitch.tv/js/embed/v1.js"></script>
-            <script>
-                new Twitch.Player("twitch-embed", {
-                    channel: "GIOTN1924",
-                    width: "100%", height: "100%",
-                    parent: ["localhost", "127.0.0.1", "mi-web-liga-1.vercel.app"]
-                });
-            </script>
-        </div>
-        <div class="area-chat">
-            <iframe src="https://www3.cbox.ws/box/?boxid=3551949&boxtag=A7QmtS" class="chat-frame" allowtransparency="yes" frameborder="0"></iframe>
-        </div>
-    </div>
-</body>
-</html>
+    <div class="navbar">
+        <div class="logo-
